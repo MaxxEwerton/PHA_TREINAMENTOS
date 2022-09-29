@@ -15,32 +15,65 @@ ${BROWSER}      chrome
 
 
 *** Test Cases ***
-Cenario: Buscando um roupa
-    [Tags]    busca
-    Dado que eu esteja na tela Home do site
-    Quando pesquisar o produto    Bag
-    Então o produto deve ser apresentado com sucesso    Resultados da busca por 'Bag'
+# Cenario01: Buscando um roupa
+#    [Tags]    busca
+#    Dado que eu esteja na tela Home do site
+#    Quando pesquisar o produto    Bag
+#    Então o produto deve ser apresentado com sucesso    Resultados da busca por 'Bag'
 
-Cenário: Buscar Mug com sucesso
-    [Tags]    mug
-    Dado que eu esteja na tela Home do site
-    Quando pesquisar o produto    Mug
-    Então o produto deve ser apresentado com sucesso    Resultados da busca por 'Mug'
-    E a imagem certa deverá aparecer
+# Cenário02: Buscar Mug com sucesso
+#    [Tags]    mug
+#    Dado que eu esteja na tela Home do site
+#    Quando pesquisar o produto    Mug
+#    Então o produto deve ser apresentado com sucesso    Resultados da busca por 'Mug'
+#    E a imagem certa deverá aparecer
 
-Cenário: Validando cadastro com sucesso no learningprime
-    [Tags]    cadastro
-    Dado que eu esteja na tela de cadastro
-    E informe todos os dados necessários
-    Quando finalizar o cadastro
-    Então devo ser direcionado para a tela home do site
-    E a seguinte mensagem deve ser apresentada
+# Cenário03: Validando cadastro com sucesso no learningprime
+#    [Tags]    cadastro
+#    Dado que eu esteja na tela de cadastro
+#    E informe todos os dados necessários
+#    Quando finalizar o cadastro
+#    Então devo ser direcionado para a tela home do site
+#    E a seguinte mensagem deve ser apresentada
+
+Cenário04: Validar login com senha incorreta
+    Dado que eu esteja na tela de login
+    Quando informar uma senha incorreta
+    Então a mensagem "Email ou senha inválida." deve ser apresentada
+
+Cenário05: Validar login com email incorreto
+    Dado que eu esteja na tela de login
+    Quando informar um email incorreto
+    Então a mensagem "Email ou senha inválida." deve ser apresentada
 
 
 *** Keywords ***
+######################################################
+#    Cenário04: Validar login com senha incorreta    #
+#######################################################
+Dado que eu esteja na tela de login
+    Wait Until Element Is Visible    xpath=//a[@href='/login']
+    Click Element    xpath=//a[@href='/login']
+
+Quando informar uma senha incorreta
+    Input Text    xpath=//input[@id="spree_user_email"]    testeeeeee@yopmail.com
+    Input Text    xpath=//input[@id="spree_user_password"]    123456789
+    Click Element    xpath=//input[@value='Entrar']
+
+Quando informar um email incorreto
+    Input Text    spree_user_email    testeeeeee@yopmail.com
+    Input Text    spree_user_password    123456789
+    Click Element    xpath=//input[@value='Entrar']
+
+Então a mensagem "Email ou senha inválida." deve ser apresentada
+    Wait Until Element Is Visible    xpath=//div[@class='flash error']
+    Element Text Should Be    xpath=//div[@class='flash error']    Email ou senha inválida.
+    Sleep    5
+
 ##################################################################
 #    Cenário: Validando cadastro com sucesso no learningprime    #
 ##################################################################
+
 Dado que eu esteja na tela de cadastro
     Wait Until Element Is Visible    xpath=//a[@href='/login']
     Click Element    xpath=//a[@href='/login']
