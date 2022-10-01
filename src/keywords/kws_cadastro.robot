@@ -9,22 +9,22 @@ Resource            ../config/package.robot
 #    Cenario: Validando cadastro com sucesso no learningprime    #
 ##############################################################################
 Dado que eu esteja na tela de cadastro
-    Wait Until Element Is Visible    xpath=//a[@href='/login']
-    Click Element    xpath=//a[@href='/login']
+    Wait Until Element Is Visible    ${CADASTRO.BTN_LOGIN}
+    Click Element    ${CADASTRO.BTN_LOGIN}
 
-    Wait Until Element Is Visible    xpath=//a[@href='/signup']
-    Click Element    xpath=//a[@href='/signup']
+    Wait Until Element Is Visible    ${LOGIN.BTN_CADASTRO}
+    Click Element    ${LOGIN.BTN_CADASTRO}
 
     Wait Until Page Contains    Novo Cliente
 
 E informe todos os dados necessários
     ${EMAIL_FAKER}    FakerLibrary.Email
-    Input Text    id=spree_user_email    ${EMAIL_FAKER}
-    Input Text    id=spree_user_password    123456789
-    Input Text    id=spree_user_password_confirmation    123456789
+    Input Text    ${LOGIN.INPUT_EMAIL}    ${EMAIL_FAKER}
+    Input Text    ${LOGIN.INPUT_SENHA}    123456789
+    Input Text    ${CADASTRO.INPUT_CONFISENHA}    123456789
 
 Quando finalizar o cadastro
-    Click Element    xpath=//input[@value="Criar" and @type="submit"]
+    Click Element    ${CADASTRO.CRIAR}
 
 Então devo ser direcionado para a tela home do site
-    Wait Until Element Is Visible    xpath=//a[@href='/account']
+    Wait Until Element Is Visible    ${CADASTRO.CONFIRMAÇÃO}

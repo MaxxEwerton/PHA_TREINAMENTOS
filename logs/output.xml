@@ -1,288 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220930 21:12:19.105" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220930 21:52:28.050" rpa="false" schemaversion="3">
 <suite id="s1" name="Webautomation" source="C:\Users\ewerton.silva\Documents\curso\PHA\PHA_TREINAMENTOS\tests\feature\webautomation.robot">
-<test id="s1-t1" name="Cenario01: Buscar bag com sucesso" line="16">
+<test id="s1-t1" name="Cenário04: Validar login com email incorreto" line="35">
 <kw name="Abrir o meu navegador" library="hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220930 21:12:20.012" level="INFO">Opening browser 'chrome' to base url 'https://learningprime.com.br/'.</msg>
-<status status="PASS" starttime="20220930 21:12:20.011" endtime="20220930 21:12:24.844"/>
+<msg timestamp="20220930 21:52:28.830" level="INFO">Opening browser 'chrome' to base url 'https://learningprime.com.br/'.</msg>
+<status status="PASS" starttime="20220930 21:52:28.830" endtime="20220930 21:52:35.213"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220930 21:12:24.844" endtime="20220930 21:12:24.977"/>
+<status status="PASS" starttime="20220930 21:52:35.213" endtime="20220930 21:52:35.345"/>
 </kw>
-<status status="PASS" starttime="20220930 21:12:20.011" endtime="20220930 21:12:24.977"/>
-</kw>
-<kw name="Dado que eu esteja na tela Home do site" library="kws_buscas">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Learning Prime Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220930 21:12:24.983" level="INFO">Page title is 'Learning Prime Store'.</msg>
-<status status="PASS" starttime="20220930 21:12:24.978" endtime="20220930 21:12:24.983"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Comprar por Categories</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220930 21:12:24.983" endtime="20220930 21:12:24.996"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:24.978" endtime="20220930 21:12:24.996"/>
-</kw>
-<kw name="Quando pesquisar o produto" library="kws_buscas">
-<arg>Bag</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${HOME.INPUT_BUSCA}</arg>
-<arg>${PRODUTO}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:24.998" level="INFO">Typing text 'Bag' into text field '//input[@placeholder='Busca' and @type='search']'.</msg>
-<status status="PASS" starttime="20220930 21:12:24.997" endtime="20220930 21:12:25.068"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${HOME.BTN_BUSCAR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:25.069" level="INFO">Clicking element '//*[@type='submit' and @value='Busca']'.</msg>
-<status status="PASS" starttime="20220930 21:12:25.068" endtime="20220930 21:12:25.569"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:24.996" endtime="20220930 21:12:25.569"/>
-</kw>
-<kw name="Então o produto deve ser apresentado com sucesso" library="kws_buscas">
-<arg>Resultados da busca por 'Bag'</arg>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Resultados da busca por 'Bag'</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220930 21:12:25.570" endtime="20220930 21:12:25.584"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:25.569" endtime="20220930 21:12:25.584"/>
-</kw>
-<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220930 21:12:25.584" endtime="20220930 21:12:27.841"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:25.584" endtime="20220930 21:12:27.841"/>
-</kw>
-<tag>bag</tag>
-<status status="PASS" starttime="20220930 21:12:20.010" endtime="20220930 21:12:27.841"/>
-</test>
-<test id="s1-t2" name="Cenário02: Validando cadastro com sucesso no learningprime" line="21">
-<kw name="Abrir o meu navegador" library="hooks" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220930 21:12:27.847" level="INFO">Opening browser 'chrome' to base url 'https://learningprime.com.br/'.</msg>
-<status status="PASS" starttime="20220930 21:12:27.845" endtime="20220930 21:12:32.700"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220930 21:12:32.700" endtime="20220930 21:12:32.817"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:27.845" endtime="20220930 21:12:32.817"/>
-</kw>
-<kw name="Dado que eu esteja na tela de cadastro" library="kws_cadastro">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//a[@href='/login']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220930 21:12:32.818" endtime="20220930 21:12:32.845"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//a[@href='/login']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:32.845" level="INFO">Clicking element 'xpath=//a[@href='/login']'.</msg>
-<status status="PASS" starttime="20220930 21:12:32.845" endtime="20220930 21:12:33.264"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//a[@href='/signup']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220930 21:12:33.264" endtime="20220930 21:12:33.288"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//a[@href='/signup']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:33.288" level="INFO">Clicking element 'xpath=//a[@href='/signup']'.</msg>
-<status status="PASS" starttime="20220930 21:12:33.288" endtime="20220930 21:12:33.730"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Novo Cliente</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220930 21:12:33.730" endtime="20220930 21:12:33.739"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:32.818" endtime="20220930 21:12:33.739"/>
-</kw>
-<kw name="E informe todos os dados necessários" library="kws_cadastro">
-<kw name="Email" library="FakerLibrary">
-<var>${EMAIL_FAKER}</var>
-<msg timestamp="20220930 21:12:33.740" level="INFO">${EMAIL_FAKER} = marcelomelo@example.com</msg>
-<status status="PASS" starttime="20220930 21:12:33.740" endtime="20220930 21:12:33.740"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=spree_user_email</arg>
-<arg>${EMAIL_FAKER}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:33.741" level="INFO">Typing text 'marcelomelo@example.com' into text field 'id=spree_user_email'.</msg>
-<status status="PASS" starttime="20220930 21:12:33.740" endtime="20220930 21:12:33.803"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=spree_user_password</arg>
-<arg>123456789</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:33.803" level="INFO">Typing text '123456789' into text field 'id=spree_user_password'.</msg>
-<status status="PASS" starttime="20220930 21:12:33.803" endtime="20220930 21:12:33.854"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=spree_user_password_confirmation</arg>
-<arg>123456789</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:33.854" level="INFO">Typing text '123456789' into text field 'id=spree_user_password_confirmation'.</msg>
-<status status="PASS" starttime="20220930 21:12:33.854" endtime="20220930 21:12:33.903"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:33.739" endtime="20220930 21:12:33.903"/>
-</kw>
-<kw name="Quando finalizar o cadastro" library="kws_cadastro">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//input[@value="Criar" and @type="submit"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220930 21:12:33.904" level="INFO">Clicking element 'xpath=//input[@value="Criar" and @type="submit"]'.</msg>
-<status status="PASS" starttime="20220930 21:12:33.904" endtime="20220930 21:12:35.029"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:33.903" endtime="20220930 21:12:35.029"/>
-</kw>
-<kw name="Então devo ser direcionado para a tela home do site" library="kws_cadastro">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//a[@href='/account']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220930 21:12:35.030" endtime="20220930 21:12:35.052"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:35.030" endtime="20220930 21:12:35.052"/>
-</kw>
-<kw name="E a seguinte mensagem deve ser apresentada" library="kws_buscas">
-<arg>Cadastro efetuado com sucesso</arg>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>${MENSAGEM}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<msg timestamp="20220930 21:12:40.175" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220930 21:12:40.176" level="FAIL">Text 'Cadastro efetuado com sucesso' did not appear in 5 seconds.</msg>
-<status status="FAIL" starttime="20220930 21:12:35.053" endtime="20220930 21:12:40.177"/>
-</kw>
-<status status="FAIL" starttime="20220930 21:12:35.052" endtime="20220930 21:12:40.178"/>
-</kw>
-<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220930 21:12:40.179" endtime="20220930 21:12:42.413"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:40.179" endtime="20220930 21:12:42.413"/>
-</kw>
-<tag>cadastro</tag>
-<status status="FAIL" starttime="20220930 21:12:27.843" endtime="20220930 21:12:42.414">Text 'Cadastro efetuado com sucesso' did not appear in 5 seconds.</status>
-</test>
-<test id="s1-t3" name="Cenário03: Validar login com senha incorreta" line="29">
-<kw name="Abrir o meu navegador" library="hooks" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220930 21:12:42.419" level="INFO">Opening browser 'chrome' to base url 'https://learningprime.com.br/'.</msg>
-<status status="PASS" starttime="20220930 21:12:42.419" endtime="20220930 21:12:47.146"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220930 21:12:47.146" endtime="20220930 21:12:47.271"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:42.418" endtime="20220930 21:12:47.271"/>
+<status status="PASS" starttime="20220930 21:52:28.830" endtime="20220930 21:52:35.346"/>
 </kw>
 <kw name="Dado que eu esteja na tela de login" library="kws_login">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME.BTN_CADASTRO}</arg>
+<arg>${CADASTRO.BTN_LOGIN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20220930 21:12:47.275" level="FAIL">Resolving variable '${HOME.BTN_CADASTRO}' failed: AttributeError: BTN_CADASTRO</msg>
-<status status="FAIL" starttime="20220930 21:12:47.274" endtime="20220930 21:12:47.276"/>
+<status status="PASS" starttime="20220930 21:52:35.348" endtime="20220930 21:52:35.402"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${HOME.BTN_CADASTRO}</arg>
+<arg>${CADASTRO.BTN_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220930 21:12:47.277" endtime="20220930 21:12:47.277"/>
+<msg timestamp="20220930 21:52:35.403" level="INFO">Clicking element '//a[@href='/login']'.</msg>
+<status status="PASS" starttime="20220930 21:52:35.402" endtime="20220930 21:52:35.923"/>
 </kw>
-<status status="FAIL" starttime="20220930 21:12:47.273" endtime="20220930 21:12:47.278"/>
-</kw>
-<kw name="Quando informar uma senha incorreta" library="kws_login">
-<status status="NOT RUN" starttime="20220930 21:12:47.278" endtime="20220930 21:12:47.278"/>
-</kw>
-<kw name="Então a mensagem &quot;Email ou senha inválida.&quot; deve ser apresentada" library="kws_login">
-<status status="NOT RUN" starttime="20220930 21:12:47.279" endtime="20220930 21:12:47.279"/>
-</kw>
-<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220930 21:12:47.280" endtime="20220930 21:12:49.441"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:47.279" endtime="20220930 21:12:49.441"/>
-</kw>
-<status status="FAIL" starttime="20220930 21:12:42.417" endtime="20220930 21:12:49.441">Resolving variable '${HOME.BTN_CADASTRO}' failed: AttributeError: BTN_CADASTRO</status>
-</test>
-<test id="s1-t4" name="Cenário04: Validar login com email incorreto" line="34">
-<kw name="Abrir o meu navegador" library="hooks" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220930 21:12:49.445" level="INFO">Opening browser 'chrome' to base url 'https://learningprime.com.br/'.</msg>
-<status status="PASS" starttime="20220930 21:12:49.444" endtime="20220930 21:12:54.157"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220930 21:12:54.157" endtime="20220930 21:12:54.284"/>
-</kw>
-<status status="PASS" starttime="20220930 21:12:49.444" endtime="20220930 21:12:54.284"/>
-</kw>
-<kw name="Dado que eu esteja na tela de login" library="kws_login">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME.BTN_CADASTRO}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20220930 21:12:54.286" level="FAIL">Resolving variable '${HOME.BTN_CADASTRO}' failed: AttributeError: BTN_CADASTRO</msg>
-<status status="FAIL" starttime="20220930 21:12:54.285" endtime="20220930 21:12:54.286"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${HOME.BTN_CADASTRO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220930 21:12:54.286" endtime="20220930 21:12:54.287"/>
-</kw>
-<status status="FAIL" starttime="20220930 21:12:54.285" endtime="20220930 21:12:54.287"/>
+<status status="PASS" starttime="20220930 21:52:35.347" endtime="20220930 21:52:35.923"/>
 </kw>
 <kw name="Quando informar um email incorreto" library="kws_login">
-<status status="NOT RUN" starttime="20220930 21:12:54.287" endtime="20220930 21:12:54.288"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN.INPUT_EMAIL}</arg>
+<arg>testeeeeeee@yopmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220930 21:52:35.925" level="INFO">Typing text 'testeeeeeee@yopmail.com' into text field 'spree_user_email'.</msg>
+<status status="PASS" starttime="20220930 21:52:35.924" endtime="20220930 21:52:35.996"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN.INPUT_SENHA}</arg>
+<arg>123456789</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220930 21:52:35.997" level="INFO">Typing text '123456789' into text field 'spree_user_password'.</msg>
+<status status="PASS" starttime="20220930 21:52:35.996" endtime="20220930 21:52:36.051"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN.BTN_ENTRAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220930 21:52:36.051" level="INFO">Clicking element '//input[@value='Entrar']'.</msg>
+<status status="PASS" starttime="20220930 21:52:36.051" endtime="20220930 21:52:36.494"/>
+</kw>
+<status status="PASS" starttime="20220930 21:52:35.924" endtime="20220930 21:52:36.494"/>
 </kw>
 <kw name="Então a mensagem &quot;Email ou senha inválida.&quot; deve ser apresentada" library="kws_login">
-<status status="NOT RUN" starttime="20220930 21:12:54.288" endtime="20220930 21:12:54.288"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN.ERROR_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220930 21:52:36.496" endtime="20220930 21:52:36.525"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${LOGIN.ERROR_MESSAGE}</arg>
+<arg>Email ou senha inválida.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220930 21:52:36.527" level="INFO">Verifying element '//div[@class='flash error']' contains exact text 'Email ou senha inválida.'.</msg>
+<status status="PASS" starttime="20220930 21:52:36.525" endtime="20220930 21:52:36.542"/>
+</kw>
+<status status="PASS" starttime="20220930 21:52:36.495" endtime="20220930 21:52:36.543"/>
 </kw>
 <kw name="Fechar navegador" library="hooks" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220930 21:12:54.289" endtime="20220930 21:12:56.450"/>
+<status status="PASS" starttime="20220930 21:52:36.543" endtime="20220930 21:52:38.751"/>
 </kw>
-<status status="PASS" starttime="20220930 21:12:54.289" endtime="20220930 21:12:56.450"/>
+<status status="PASS" starttime="20220930 21:52:36.543" endtime="20220930 21:52:38.752"/>
 </kw>
-<status status="FAIL" starttime="20220930 21:12:49.443" endtime="20220930 21:12:56.451">Resolving variable '${HOME.BTN_CADASTRO}' failed: AttributeError: BTN_CADASTRO</status>
+<tag>flogin</tag>
+<status status="PASS" starttime="20220930 21:52:28.829" endtime="20220930 21:52:38.753"/>
 </test>
 <doc>Aqui neste arquivo estaram presentes todos os tipos de
 variáveis que iremos estudar ao longo do treinamento.</doc>
-<status status="FAIL" starttime="20220930 21:12:19.108" endtime="20220930 21:12:56.452"/>
+<status status="PASS" starttime="20220930 21:52:28.052" endtime="20220930 21:52:38.760"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="3" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">bag</stat>
-<stat pass="0" fail="1" skip="0">cadastro</stat>
+<stat pass="1" fail="0" skip="0">flogin</stat>
 </tag>
 <suite>
-<stat pass="1" fail="3" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220930 21:12:20.000" level="WARN">Imported resource file 'C:\Users\ewerton.silva\Documents\curso\PHA\PHA_TREINAMENTOS\src\pages\cadastro_page.robot' is empty.</msg>
 </errors>
 </robot>

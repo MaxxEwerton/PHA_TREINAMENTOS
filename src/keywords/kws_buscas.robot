@@ -27,3 +27,4 @@ Quando pesquisar o produto
 Então o produto deve ser apresentado com sucesso
     [Arguments]    ${MENSAGEM}
     Wait Until Page Contains    Resultados da busca por 'Bag'
+    Sleep    2
